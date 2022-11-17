@@ -1,0 +1,27 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  // border-style: solid;
+}
+
+table {
+  border-collapse: collapse;
+}
+ th {
+  
+}
+
+th, td {
+ 
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+
+}
+
+tr:hover {
+  
+  
+}
+

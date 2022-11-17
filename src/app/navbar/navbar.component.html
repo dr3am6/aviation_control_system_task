@@ -1,0 +1,29 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
+  <div class="logo-container2">
+    <div style="display: flex;">
+      <div class="logo"> <img src="assets/logo.png" style="height: 38px; width:38px"></div>
+      <div class="logo-text" @fadeInOut *ngIf="collapsed"> <img src="assets/textLogo.png" style="height: 30px; width:85px"></div>
+    </div>
+  </div>
+  <div class="logo-container">
+    <div class="logo-text" *ngIf="!collapsed" (click)="toggleCollapse()"><img src="assets/arrowRight.png" style="height: 24px; width:24px"></div>
+    <div class="logo-text1" *ngIf="collapsed" (click)="toggleCollapse()"><img src="assets/arrowLeft.png" style="height: 24px; width:24px"></div>
+
+  </div>
+  <div class="logo-container1">
+    <button class="logo" [ngClass]="collapsed ? 'try': ''"><img src="assets/DJ.png" style="height: 21px; width:21px"></button>
+    <div class="logo-text" @fadeInOut *ngIf="collapsed">Angular</div>
+
+  </div>
+  <ul class="sidenav-nav">
+    <li class="sidenav-nav-item" *ngFor="let data of navData">
+      <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <img class="" style="height: 24px; width:24px" [src]="data.icon">
+        <span class="sidenav-link-text" *ngIf="collapsed">
+          {{data.label}}
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>
